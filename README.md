@@ -27,3 +27,11 @@ This repository demonstrates the use of Terragrunt to manage AWS infrastructure 
 ## Inheritance with Terragrunt
 
 The `include` block in a child `terragrunt.hcl` file:
+
+```hcl
+include {
+  path = find_in_parent_folders()
+}
+```
+
+allows you to inherit common settings (e.g., backend configuration, shared inputs) from a parent configuration, typically defined at the repository root.
