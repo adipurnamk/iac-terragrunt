@@ -1,0 +1,24 @@
+terraform {
+  source = "git::git@github.com:terraform-aws-modules/terraform-aws-s3-bucket.git//modules/bucket?ref=v3.7.0"
+}
+
+include {
+  path = find_in_parent_folders()
+}
+
+inputs = {
+  bucket = "your-unique-bucket-name"
+  acl    = "private"
+
+  versioning = {
+    enabled = true
+  }
+
+  server_side_encryption_configuration = {
+    rule = {
+      apply_server_side_encryption_by_default = {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+}
