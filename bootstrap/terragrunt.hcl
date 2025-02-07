@@ -1,13 +1,13 @@
 terraform {
-  source = "git::git@github.com:terraform-aws-modules/terraform-aws-s3-bucket.git//modules/bucket?ref=v3.7.0"
+  source = "../modules/s3.tf"
 }
 
-include {
-  path = find_in_parent_folders()
-}
+# include {
+#   path = find_in_parent_folders()
+# }
 
 inputs = {
-  bucket = "s3-backend-state"
+  bucket_name = "s3-backend-state"
   acl    = "private"
 
   versioning = {
