@@ -7,7 +7,7 @@ include {
 }
 
 inputs = {
-  bucket = "your-unique-bucket-name"
+  bucket = "s3-backend-state"
   acl    = "private"
 
   versioning = {
